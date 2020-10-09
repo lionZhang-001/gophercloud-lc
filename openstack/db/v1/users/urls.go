@@ -1,0 +1,11 @@
+package users
+
+import "gophercloud-lc"
+
+func baseURL(c *gophercloud.ServiceClient, instanceID string) string {
+	return c.ServiceURL("instances", instanceID, "users")
+}
+
+func userURL(c *gophercloud.ServiceClient, instanceID, userName string) string {
+	return c.ServiceURL("instances", instanceID, "users", userName)
+}
